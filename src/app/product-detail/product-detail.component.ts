@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  product : any = {};
+  product: any = {};
   id: number;
-  constructor(route: ActivatedRoute, private router: Router, public dialog: MatDialog, private productService : ProductService) {
+  constructor(route: ActivatedRoute, private router: Router, public dialog: MatDialog, private productService: ProductService) {
     route.params.subscribe(params => {
       this.getProductDetail(params.id);
     });

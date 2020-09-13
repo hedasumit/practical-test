@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RemoveDialogComponent } from './remove/remove.dialog.component';
 import { RestoreDialogComponent } from './restore/restore.dialog.component';
 
-import { ProductService } from './../services/product.service'
+import { ProductService } from './../services/product.service';
 @Component({
   selector: 'app-trash',
   templateUrl: './trash.component.html',
@@ -11,19 +11,19 @@ import { ProductService } from './../services/product.service'
 })
 export class TrashComponent implements OnInit {
   trashProducts: any = [];
-  constructor(private productService: ProductService, 
-     public dialog: MatDialog) { }
+  constructor(private productService: ProductService,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getTrashProducts();
   }
-  private getTrashProducts () {
+  private getTrashProducts() {
     this.trashProducts = this.productService.getAllTrashProducts();
   }
 
   restore = (id, title) => {
     const dialogRef = this.dialog.open(RestoreDialogComponent, {
-      data: { id: id, title : title }
+      data: { id, title }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {
@@ -34,7 +34,7 @@ export class TrashComponent implements OnInit {
 
   remove = (id, title) => {
     const dialogRef = this.dialog.open(RemoveDialogComponent, {
-      data: { id: id, title : title }
+      data: { id, title }
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result === 1) {

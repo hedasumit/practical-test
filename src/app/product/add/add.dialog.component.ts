@@ -12,8 +12,8 @@ import { Product } from '../../models/product';
 
 export class AddDialogComponent {
   constructor(public dialogRef: MatDialogRef<AddDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public product: Product,
-    public productService: ProductService) { }
+              @Inject(MAT_DIALOG_DATA) public product: Product,
+              public productService: ProductService) { }
 
   formControl = new FormControl('', [
     Validators.required

@@ -7,11 +7,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FilterPipe implements PipeTransform {
     transform(items: any[], search: string): any {
-        search = search.toLowerCase()
+        search = search.toLowerCase();
         // I am unsure what id is here. did you mean title?
-        return items.filter(item => 
-            {
-                let tempTitle = item.title.toLowerCase();
+        return items.filter(item => {
+                const tempTitle = item.title.toLowerCase();
                 return tempTitle.indexOf(search) !== -1 ;
             });
     }

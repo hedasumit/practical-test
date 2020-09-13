@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'trash', component: TrashComponent},
   { path: 'product-detail/:id', component: ProductDetailComponent}
 ];
- 
+
 @NgModule({
   imports: [
     CommonModule,

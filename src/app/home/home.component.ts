@@ -12,15 +12,15 @@ export class HomeComponent implements OnInit {
 
   constructor(public dialog: MatDialog, public productService: ProductService) { }
   search = '';
-  products : any = [];
+  products: any = [];
   ngOnInit(): void {
     this.refreshTable();
   }
-  
+
   private refreshTable() {
    this.products =  this.productService.getAllProducts();
   }
-  
+
   addNew() {
     const dialogRef = this.dialog.open(AddDialogComponent, {
       data: {product: Product }
