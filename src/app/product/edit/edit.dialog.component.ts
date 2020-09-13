@@ -2,7 +2,10 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {Component, Inject} from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {FormControl, Validators} from '@angular/forms';
-
+interface Location {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-baza.dialog',
   templateUrl: './edit.dialog.html',
@@ -17,7 +20,11 @@ export class EditDialogComponent {
     Validators.required
     // Validators.email,
   ]);
-
+  locations: Location[] = [
+    {value: 'New York', viewValue: 'New York'},
+    {value: 'Washington', viewValue: 'Washington'},
+    {value: 'New Jersy', viewValue: 'New Jersy'}
+  ];
   getErrorMessage() {
     return this.formControl.hasError('required') ? 'Required field' :
         '';

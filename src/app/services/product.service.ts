@@ -50,11 +50,27 @@ export class ProductService {
     product.id = new Date().getTime();
     this.products = this.localStorageGetItem('products');
     if (this.products === null) {
-      this.localStorageSetItem('products', [{ id: product.id, image: product.image,
-      title: product.title, description: product.description }]);
+      this.localStorageSetItem('products', [{
+        id: product.id,
+        image: product.image,
+        title: product.title,
+        description: product.description,
+        location: product.location,
+        inStock: product.inStock,
+        price: product.price,
+        rating: product.rating
+      }]);
     } else {
-      this.products.push({ id: product.id, image: product.image,
-      title: product.title, description: product.description });
+      this.products.push({
+        id: product.id,
+        image: product.image,
+        title: product.title,
+        description: product.description,
+        location: product.location,
+        inStock: product.inStock,
+        price: product.price,
+        rating: product.rating
+      });
       this.localStorageSetItem('products', this.products);
     }
     // add in local storage with unique mili second id
@@ -87,21 +103,21 @@ export class ProductService {
   }
   restoreProduct(id): void {
     // move that product to products
-   this.trashProducts = this.localStorageGetItem('trashProducts');
-   const result = this.trashProducts.filter(obj => {
+    this.trashProducts = this.localStorageGetItem('trashProducts');
+    const result = this.trashProducts.filter(obj => {
       return obj.id === parseInt(id);
     });
-   const newList = this.trashProducts.filter(obj => {
+    const newList = this.trashProducts.filter(obj => {
       return obj.id !== parseInt(id);
     });
-   this.products = this.localStorageGetItem('products');
-   if (this.products === null) {
+    this.products = this.localStorageGetItem('products');
+    if (this.products === null) {
       this.localStorageSetItem('products', result);
     } else {
       this.products.push(result[0]);
       this.localStorageSetItem('products', this.products);
     }
-   this.localStorageSetItem('trashProducts', newList);
+    this.localStorageSetItem('trashProducts', newList);
   }
 
   removeProduct(id): void {

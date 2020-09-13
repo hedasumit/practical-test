@@ -28,7 +28,16 @@ export class ProductDetailComponent implements OnInit {
   startEdit() {
     // index row is used just for debugging proposes and can be removed
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      data: { id: this.product.id, title: this.product.title, description: this.product.description, image: this.product.image }
+      data: {
+        id: this.product.id,
+        title: this.product.title,
+        description: this.product.description,
+        image: this.product.image,
+        location: this.product.location,
+        inStock: this.product.inStock,
+        price: this.product.price,
+        rating: this.product.rating
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {

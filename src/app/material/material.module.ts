@@ -10,6 +10,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -24,7 +27,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatSelectModule
   ],
   exports: [
     MatTabsModule,
@@ -36,7 +42,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

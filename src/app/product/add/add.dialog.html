@@ -23,6 +23,37 @@
       </mat-form-field>
     </div>
 
+    <div class="form">
+      <mat-form-field color="accent">
+        <input type="number" matInput placeholder="Price" [(ngModel)]="product.price" name="price">
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input type="number" matInput placeholder="Rating" [(ngModel)]="product.rating" name="rating" min="1" max="5">
+      </mat-form-field>
+    </div>
+    
+    <div class="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Location</mat-label>
+        <mat-select [(ngModel)]="product.location" name="location">
+          <mat-option *ngFor="let location of locations" [value]="location.value">
+            {{location.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-label>In Stock</mat-label>
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="product.inStock" name="inStock">
+        <mat-radio-button value="Yes">Yes</mat-radio-button>
+        <mat-radio-button value="No">No</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
     <div mat-dialog-actions>
       <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1"
         (click)="confirmAdd()">Save</button>
