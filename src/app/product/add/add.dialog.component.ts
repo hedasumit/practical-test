@@ -16,8 +16,8 @@ interface Location {
 
 export class AddDialogComponent {
   constructor(public dialogRef: MatDialogRef<AddDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public product: Product,
-    public productService: ProductService) { }
+              @Inject(MAT_DIALOG_DATA) public product: Product,
+              public productService: ProductService) { }
     locations: Location[] = [
       {value: 'New York', viewValue: 'New York'},
       {value: 'Washington', viewValue: 'Washington'},

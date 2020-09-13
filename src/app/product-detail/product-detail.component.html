@@ -8,7 +8,14 @@
   </button>
     <div class="wrapper">
       <div class="box">
-          <img [src]="product.image">
+        <lib-ngx-image-zoom
+    [thumbImage]=product.image
+    [fullImage]=product.image
+    [magnification]="1"
+    [enableScrollZoom]="true"
+    [enableLens]="true"
+    [lensWidth]="200"
+></lib-ngx-image-zoom>
           <p>Title : {{product.title}}</p>
           <p>Description : {{product.description}}</p>
           <p>Location : {{product.location}}</p>

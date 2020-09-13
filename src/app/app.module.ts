@@ -20,6 +20,7 @@ import {DeleteDialogComponent} from './product/delete/delete.dialog.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { RemoveDialogComponent } from './trash/remove/remove.dialog.component';
 import { RestoreDialogComponent } from './trash/restore/restore.dialog.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { RestoreDialogComponent } from './trash/restore/restore.dialog.component
     FlexLayoutModule,
     RoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxImageZoomModule 
   ],
   providers: [
     ProductService
