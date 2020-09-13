@@ -1,0 +1,16 @@
+<section fxLayout="column" fxFlexAlign="stretch"> 
+  <div class="wrapper">
+    <div class="box" *ngFor="let product of trashProducts;">
+        <img [src]="product.image">
+        <p>{{product.title}}</p>
+       <div class='remove-restore-buttons'>
+        <button mat-mini-fab color="primary"  (click)="restore(product.id, product.title)">
+          <mat-icon>restore</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary"  (click)="remove(product.id, product.title)">
+          <mat-icon>delete</mat-icon>
+        </button>
+       </div>
+    </div>
+</div>
+</section>

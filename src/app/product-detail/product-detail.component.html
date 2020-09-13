@@ -1,0 +1,18 @@
+<section fxLayout="column" fxFlexAlign="stretch"> 
+
+  <button mat-fab color="primary"  (click)="startEdit()">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-fab color="primary"  (click)="deleteItem()">
+    <mat-icon>delete</mat-icon>
+  </button>
+    <div class="wrapper">
+      <div class="box">
+          <img [src]="product.image">
+          <p>{{product.title}}</p>
+          <p>{{product.description}}</p>
+      </div>
+  </div>
+  
+  </section>
+  

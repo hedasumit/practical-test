@@ -1,0 +1,43 @@
+section div p{ 
+  color: #3f51b5; 
+  font-size: 30px; 
+  text-shadow: 2px 3px 5px grey; 
+  margin: 30px 0; 
+} 
+section div + p{ 
+  color: #3f51b5; 
+  font-weight: bold; 
+  font-size: 20px; 
+  padding-bottom: 20px; 
+}
+.wrapper {
+  width: 1000px;
+  float: none;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 30%;
+  float: left;
+  height: 200px;
+  margin: 15px 1.5%;
+  cursor: pointer;
+}
+
+ .box img {
+  width: 100%;
+  float: left;
+  height: 200px;
+  fill: #000;
+}
+
+ .box p {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #000;
+  font-size: 35px;
+}
