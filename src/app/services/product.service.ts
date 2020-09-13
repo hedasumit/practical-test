@@ -63,7 +63,7 @@ export class ProductService {
   updateProduct(product): void {
     this.dialogProduct = product;
     this.products = this.localStorageGetItem('products');
-    const objIndex = this.products.findIndex((obj => obj.id == product.id));
+    const objIndex = this.products.findIndex((obj => obj.id === product.id));
     this.products[objIndex] = product;
     this.localStorageSetItem('products', this.products);
   }
@@ -106,7 +106,7 @@ export class ProductService {
 
   removeProduct(id): void {
     this.trashProducts = this.localStorageGetItem('trashProducts');
-    const objIndex = this.trashProducts.findIndex((obj => obj.id == id));
+    const objIndex = this.trashProducts.findIndex((obj => obj.id === id));
     this.trashProducts.splice(objIndex, 1);
     this.localStorageSetItem('trashProducts', this.trashProducts);
   }
